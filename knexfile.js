@@ -1,10 +1,13 @@
-const path = require("path");
+ const path = require("path");
 
 if (process.env.USER) require("dotenv").config();
 
 const {
   DATABASE_URL = "postgresql://postgres@localhost/postgres",
 } = process.env;
+
+//Local
+
 
 module.exports = {
   development: {
