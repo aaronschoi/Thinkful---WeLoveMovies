@@ -1,5 +1,10 @@
 const knex = require('../db/connection');
 
-module.exports = {
+const list = () => {
+    return knex('critics')
+        .select('*')
+}
 
+module.exports = {
+    list
 };

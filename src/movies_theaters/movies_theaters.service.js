@@ -1,5 +1,10 @@
 const knex = require('../db/connection');
 
-module.exports = {
+const list = () => {
+    return knex('movies_theaters')
+        .select('*')
+}
 
+module.exports = {
+    list,
 };
