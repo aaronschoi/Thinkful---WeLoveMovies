@@ -1,6 +1,4 @@
 exports.up = function(knex) {
-  knex.schema.hasTable("movies").then(function (exists) {
-    if (!exists) {
     return knex.schema.createTable("movies", function (table) {
         table.increments("movie_id").primary();
         table.string("title");
@@ -9,8 +7,8 @@ exports.up = function(knex) {
         table.string("description", 1000);
         table.string("image_url");
       });
-};})}
+};
 
 exports.down = function(knex) {
-  return knex.schema.dropTableIfExists("movies");
+  return knex.schema.dropTable("movies");
 };

@@ -1,6 +1,4 @@
 exports.up = function (knex) {
-  knex.schema.hasTable('reviews').then(function (exists){
-    if(!exists){
   return knex.schema.createTable("reviews", function (table) {
     table.increments("review_id").primary();
     table.text("content");
@@ -17,8 +15,8 @@ exports.up = function (knex) {
       .onDelete("CASCADE");
     table.timestamps(true, true);
   });
-};})}
+};
 
 exports.down = function (knex) {
-  return knex.schema.dropTableIfExists("reviews");
+  return knex.schema.dropTable("reviews");
 };
